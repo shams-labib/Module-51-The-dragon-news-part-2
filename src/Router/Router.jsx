@@ -6,6 +6,8 @@ import CategoryNews from "../Pages/CategoryNews";
 import Login from "../Firebase/Login/Login";
 import Register from "../Firebase/Register/Register";
 import AuthLayout from "../layout/HomeLayout/AuthLayout";
+import ReadMore from "../Pages/ReadMore";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -14,7 +16,7 @@ export const router = createBrowserRouter([
         element:<HomeLayout></HomeLayout>,
         children: [
            {
-            path:'/home',
+            path:'/',
             index:true,
             element:<Home></Home>
            },
@@ -38,5 +40,12 @@ export const router = createBrowserRouter([
                     element:<Register></Register>
                 },
             ]
+           },
+           {
+            path:'/news-details/:id',
+            element:<PrivateRoute>
+                <ReadMore></ReadMore>,
+            </PrivateRoute>,
+            loader: ()=> fetch('/news.json')
            }
 ])

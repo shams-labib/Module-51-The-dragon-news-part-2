@@ -12,6 +12,7 @@ const NewsCard = ({ news }) => {
     details,
     rating,
     total_view,
+    id
   } = news;
 
   const formattedDate = new Date(news.author.published_date).toLocaleDateString(
@@ -60,9 +61,9 @@ const NewsCard = ({ news }) => {
           {details.length > 150 ? details.slice(0, 250) + "..." : details}
         </p>
 
-        <a href="#" className="text-primary font-semibold text-sm mt-2">
+        <Link to={`/news-details/${id}`} href="#" className="text-primary font-semibold text-sm mt-2">
           Read More
-        </a>
+        </Link>
 
         {/* Footer Section */}
         <div className="flex justify-between items-center mt-4 pt-2 border-t">
