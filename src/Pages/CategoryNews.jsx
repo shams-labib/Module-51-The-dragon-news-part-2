@@ -28,7 +28,7 @@ const CategoryNews = () => {
     },[data, parseIntId])
 
 
-    console.log(categoryNews)
+    // console.log(categoryNews)
 
     return (
         <div>

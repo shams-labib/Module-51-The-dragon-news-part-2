@@ -8,6 +8,7 @@ import Register from "../Firebase/Register/Register";
 import AuthLayout from "../layout/HomeLayout/AuthLayout";
 import ReadMore from "../Pages/ReadMore";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import Loading from "../PrivateRoute/Loading";
 
 export const router = createBrowserRouter([
     {
@@ -23,7 +24,8 @@ export const router = createBrowserRouter([
            {
             path:'/category/:id',
             element:<CategoryNews></CategoryNews>,
-            loader:()=> fetch('/news.json')
+            loader:()=> fetch('/news.json'),
+            hydrateFallbackElement:<Loading></Loading>
            },
         ]
     },
@@ -46,6 +48,7 @@ export const router = createBrowserRouter([
             element:<PrivateRoute>
                 <ReadMore></ReadMore>,
             </PrivateRoute>,
-            loader: ()=> fetch('/news.json')
+            loader: ()=> fetch('/news.json'),
+            hydrateFallbackElement:<Loading></Loading>
            }
 ])

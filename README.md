@@ -5,3 +5,7 @@
 3. so 50-3 video e amra shiklam kiavbe marquue use kore text ek pash theke arekpash e show korano jay, ami eta dekhte caile LatestNews.jsx e dekhte parbo, (npm fast marquee) package er name babe!
 
 4. so ekhane aro ekta important jinish seta hosce useNavigate jeta muloto react router theke ashe, eta use kore ami ekta page theke arekta page e ba path e user ke pathiye dite pari that's all
+
+5. ekhane firebase  e deploy korte gele firbase bade onno site like, netlify, surge etc egulo te depploy korte gele must firebase e permission neya lagbe and sei link sekhane set up kore dite hobe
+
+6. api key hide korar jonno .env use korte hobe jeta vite theke provide, kore google e search dile pabe!

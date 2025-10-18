@@ -9,6 +9,7 @@ const Navbar = () => {
 
     const handleLogOut = ()=>{
         signOutFunction().then(result =>{
+            console.log(result)
             alert("LogOut Success")
         }).catch(err =>{
             console.log(err);
@@ -27,7 +28,7 @@ const Navbar = () => {
                 <NavLink to={'/career'} className="text-accent">Career</NavLink>
             </div>
             <div className="login-btn flex gap-3">
-                <img className='w-[40px] h-[40px] rounded-full' src={userImg} alt="" />
+                <img className='w-[40px] h-[40px] rounded-full' src={`${user ? user.photoURL : userImg}`} alt="" />
                 {
                     user ? <Link to={'/'} onClick={handleLogOut} className='bg-primary rounded-lg px-8 py-2 font-semibold text-white cursor-pointer'>LogOut</Link> : <Link to={'/auth/login'} className='bg-primary rounded-lg px-8 py-2 font-semibold text-white cursor-pointer'>Log In</Link>
                 }
